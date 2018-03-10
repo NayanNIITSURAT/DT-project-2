@@ -57,9 +57,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-  <li class="active"><a href="#home">home</a></li>
-        <li><a href="#login">login</a></li>
-        <li><a href="#register">registration</a></li>
+  <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">register</a></li>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">

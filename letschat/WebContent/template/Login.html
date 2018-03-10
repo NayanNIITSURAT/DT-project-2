@@ -1,38 +1,42 @@
 <html>
-<head>
+<body>
+<div height="100%">
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
 
-<title>
-login page
-</title>
-</head>
-<body >
+<!-- Form Name -->
+<legend><center><h2><b>Login Form</b></h2></center></legend><br>
 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <fieldset style="width:300px;border:5px white dotted; background-color:#000000; text-align :center; box-shadow:10px 10px 5px #5c5959; border-radius:10px 80px 10px 80px; height: 342px;">
-       
-           <div class="style4">
-               <br />
-       <p style="color:white">-: Login Page :-</span><b><br class="style1" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>
-               </p>
-           </div>
- <form >
+<!-- Text input-->
 
-  
- <div class="form-group" >
-    <label><b>Email:</b></label><br>
-    <input type="text" placeholder="Enter email-id" name="email" required></div>
 <div class="form-group">
-    <label><b>Password:</b></label><br>
-    <input type="password" placeholder="Enter Password" name="pass" required></div>
-<div class="form-group">
-   <button type="Submit" name ="Submit" value="Login" class="btn btn-primary btn-md">Login</button>    
-    <button type="Reset" name ="Reset" value="Reset" class="btn btn-primary btn-md">Reset</button>    
+  <label class="col-md-4 control-label">Email id:-</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="email" name="email" placeholder="Email" required class="form-control input-lg"  />
     </div>
-    <div class="form-group" style="Color:white">
-      <input type="checkbox" checked="checked"> Remember me
-      
-    </div>
-    </form>
+  </div>
+</div>
 
-    </fieldset>
-</body>
-</html>
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Password:-</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+    </div>
+  </div>
+</div>
+ <div class="pwstrength_viewport_progress"></div>
+          
+          
+          <button type="submit" name="go" class="btn btn-primary ">Sign in</button>
+         
+
+</fieldset>
+</form>
+
+    </div>
