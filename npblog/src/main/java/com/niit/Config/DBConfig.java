@@ -38,9 +38,9 @@ public class DBConfig {
 		{  System.out.println("enter in datasource");
 			DriverManagerDataSource dataSource=new DriverManagerDataSource();
 			dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-			dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
-			dataSource.setUsername("hr");
-			dataSource.setPassword("hr");
+			dataSource.setUrl("jdbc:oracle:thin:localhost:1521/XE");
+			dataSource.setUsername("HR");
+			dataSource.setPassword("HR");
 			System.out.println("out of datasource");
 			return dataSource;
 		
