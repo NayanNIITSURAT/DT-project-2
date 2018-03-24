@@ -24,6 +24,7 @@ public class Blog {
 	java.util.Date createDate;
 	String username;
 	String status;
+	private int likes;
 	public int getBlogId() {
 		return blogId;
 	}
@@ -59,6 +60,10 @@ public class Blog {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public void setLikes(int i) {
+		this.likes=i;
+		
 	}
 	
 }
