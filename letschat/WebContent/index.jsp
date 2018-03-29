@@ -1,15 +1,17 @@
-
-<html >
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-  <title>NIIT SURAT  </title>
-
+  <title>NIIT SURAT</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
-  <script src="myrouteconfig.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  <script src="js/myrouteconfig.js"></script>
+  <script src="c_blog/BlogController.js"></script>
+  
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -57,9 +59,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-  <li class="active"><a href="#home">home</a></li>
-        <li><a href="#login">login</a></li>
-        <li><a href="#register">registration</a></li>
+  <li class="active"><a href="#!home">home</a></li>
+       <li><a href="#!login">login</a></li>
+        <li><a href="#!register">registration</a></li>
+				<li><a href="#!blog">Blog</a></li>
+				<li><a href="#!Aboutus">About Us</a></li>
+				<li><a href="#!contactus">Contact Us</a></li>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -68,20 +73,21 @@
     </div>
   </div>
 </nav>
-  
+ <!--  
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
     <p>   <a href="#home">home</a></p>
   <p><a href="#login">login</a></p>
   <p><a href="#register">registration</a></p>
-    </div>
+    </div>--> 
+    this is index 
    <div ng-view>
+   
+   
     </div>
-    </div>
-  </div>
-</div>
-
+  
+ 
 <footer class="container-fluid text-center">
   <p>CopyRight By NIIT surat</p>
 </footer>
