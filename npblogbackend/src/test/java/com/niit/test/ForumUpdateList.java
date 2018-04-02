@@ -29,7 +29,7 @@ public class ForumUpdateList {
 	@Test
 	public void testDeleteForum() {
 		Forum forum= new Forum();
-		 forum=(Forum)forumDAO.getForum(1);
+		 forum=(Forum)forumDAO.getForum(61);
 		 forum.setUsername("Kiri");
 		 assertEquals("sucessfully updated from table" ,true,forumDAO.updateForum(forum));
 	}

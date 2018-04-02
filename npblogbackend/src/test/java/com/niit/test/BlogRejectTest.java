@@ -32,7 +32,7 @@ public class BlogRejectTest {
 	{
 		
 		Blog blog = new Blog();
-		 blog=(Blog)blogDAO.getBlog(42);
+		 blog=(Blog)blogDAO.getBlog(55);
 		 blog.setStatus("A");
 		 assertEquals("sucessfully updated status from table" ,true,blogDAO.rejectBlog(blog));
 

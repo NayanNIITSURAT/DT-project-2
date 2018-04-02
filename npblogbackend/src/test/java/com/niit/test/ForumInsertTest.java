@@ -27,7 +27,7 @@ public class ForumInsertTest {
 		context.scan("com.niit");
 		context.refresh();
 		
-		forumDAO =(ForumDAO) context.getBean("forumDAO");
+		forumDAO =(ForumDAO)context.getBean("forumDAO");
 	}
 
 	@Test
@@ -38,10 +38,10 @@ public class ForumInsertTest {
 			
 		Forum forum = new Forum();
 
-		forum.setForumName("Forumnp");
-		forum.setForumContent("this is np from");
+		forum.setForumName("forum11");
+		forum.setForumContent("this is np from11");
 	    forum.setCreateDate(dobj);
-	    forum.setUsername("np");
+	    forum.setUsername("form11");
 	    forum.setStatus("NA");
 		forumDAO.addForum(forum);
 		System.out.println("Done  from inserted");

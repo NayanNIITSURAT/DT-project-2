@@ -36,13 +36,13 @@ public class JobInsertTest {
 		Date dobj=new SimpleDateFormat("dd/mm/yyyy").parse(dt);
 		Job job = new Job();
 
-		job.setJobTitle("Manager");
-	job.setJobDescription("Managing design part");
+		job.setJobTitle("FACULTY OF ASP");
+	job.setJobDescription("THIS IS THE JOB FOR THE ASP");
 		job.setJoinDate(dobj);
 		job.setSalary(50000);
 
 	    jobDAO.addJob(job);
-		System.out.println("Done Boss");
+		System.out.println("Done");
 		
 	}
 }

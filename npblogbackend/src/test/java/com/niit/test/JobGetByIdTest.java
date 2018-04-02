@@ -28,7 +28,7 @@ public class JobGetByIdTest {
 	@Test
 	public void testUpdateJob() {
 		Job job = new Job();
-		 job=(Job)jobDAO.getJob(2);
+		 job=(Job)jobDAO.getJob(52);
 		 System.out.println("ID: "+job.getJobId() + ",JobTitle: " +  job.getJobTitle() + " ,Salary:"+ job.getSalary());
 	}
 		
