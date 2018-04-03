@@ -10,7 +10,7 @@ myApp.controller("BlogController",function($scope,$http,$location)
 	{
 		console.log("Enter into insertBlog Method");
 		
-		$http.post('http://localhost:8098/chatmidware/addBlog',$scope.blog)
+		$http.post("http://localhost:8098/npblogmidware/addBlog",$scope.blog)
 		.then(fetchAllBlog(),function(response)
      	{
 			console.log('Status Text:'+response.statusText);
@@ -20,7 +20,7 @@ myApp.controller("BlogController",function($scope,$http,$location)
 	function fetchAllBlog()
 	{
 		console.log('Fetching All Blogs');
-		$http.get("http://localhost:8098/chatmidware/listBlogs")
+		$http.get("http://localhost:8098/npblogmidware/listBlogs")
 		.then(function(response)
 				{
 			            $scope.blogdata=response.data;

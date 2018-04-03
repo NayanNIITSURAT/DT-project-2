@@ -1,10 +1,13 @@
 <html>
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible"  content="IE-edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Blog page</title>
 <script type="text/javascript" src="c_blog/BlogCcontroller.js"></script>
 </head>
-<body  ng-controller="BlogController">
-<div style="padding-top:60px";>
+<body>
+<div style="padding-top:60px"; ng-controller="BlogController">
 
 <form  id="blogform" method="post" >
 <table width="35%" background-color="#0099CC" align="center" >
@@ -15,7 +18,7 @@
 
 <tr>
 <td>Blog Name:</td>
-<td><input type="text" size=25 name="blogName" ng-model="blog.blogName"></td>
+<td><input type="text" size=25 name="blogName" ng-model="blog.blogName"  id="blogName"></td>
 </tr>
 
 <tr>
@@ -25,7 +28,7 @@
 
 <tr>
 <td ><input type="Reset"  value="Reset"></td>
-<td><input type="submit"  value="Insert Blog" ng-submit="addBlog(blog)"></td>
+<td><input type="submit"  value="Insert Blog" ng-Click="insertblog()"></td>
 </tr>
 </table>
 
