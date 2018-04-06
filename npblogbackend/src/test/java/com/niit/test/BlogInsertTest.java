@@ -1,5 +1,7 @@
 package com.niit.test;
 
+import static org.junit.Assert.assertTrue;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -32,19 +34,18 @@ public class BlogInsertTest {
 	}
 
 	@Test
-	public void testInsertBlog() throws ParseException {
-		String dt="04/03/2018";
-		Date dobj=new SimpleDateFormat("dd/mm/yyyy").parse(dt);
-			
+	public void testInsertBlog() {
+		
 		Blog blog = new Blog();
 
 		blog.setBlogName("JAVA");
 		blog.setBlogContent("SPRINGFRAMWORK");
-		blog.setCreateDate(dobj);
+		blog.setCreateDate(new java.util.Date());
 		blog.setUsername("np");
-		blog.setStatus("a");
+		blog.setStatus("A");
+	blog.setLikes(0);
 	
-		blogDAO.addBlog(blog);
+	assertTrue("data inserted into blog table",	blogDAO.addBlog(blog));
 		System.out.println("Done Boss");
 
 	}

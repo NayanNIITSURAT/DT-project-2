@@ -1,6 +1,6 @@
 package com.niit.test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -8,33 +8,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.Config.DBConfig;
-import com.niit.DAO.JobDAO;
-import com.niit.Model.Job;
+import com.niit.DAO.UserDAO;
+import com.niit.Model.User;
 
-public class JobUpdateTest {
+public class UpdateOnlineStatusTest {
 	private static DBConfig config;
 	@Autowired
-	private static JobDAO jobDAO;
+	private static UserDAO userDAO;
 
 	@BeforeClass
 	public static void setUp() {
 		config = new DBConfig();
-		//blogDAO = new BlogDAOImpl(config.getSessionFactory(config.getDataSource()));
+		
 		@SuppressWarnings("resource")
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit");
 		context.refresh();
 		
-		jobDAO =(JobDAO) context.getBean("jobDAO");
+	userDAO =(UserDAO) context.getBean("userDAO");
 	}
 	@Test
-	public void testUpdateJob() {
+	public void testupdateOnlineStatusTest() 
+	{
+		User user=userDAO.getUser("Pranali");
+		System.out.println(userDAO.updateOnlineStatus("Y", user));
+	    assertTrue("Status Updated",userDAO.updateOnlineStatus("Y", user));
 		
-		Job job = new Job();
-		 job=(Job)jobDAO.getJob(62);
-		 job.setSalary(60000);
-		 assertEquals("sucessfully updated from table" ,true,jobDAO.updateJob(job));
-			
 	}
 
 }

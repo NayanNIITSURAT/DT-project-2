@@ -8,33 +8,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.Config.DBConfig;
-import com.niit.DAO.JobDAO;
-import com.niit.Model.Job;
+import com.niit.DAO.UserDAO;
+import com.niit.Model.Blog;
+import com.niit.Model.User;
 
-public class JobUpdateTest {
+public class UserUpdateTest {
+
+	
 	private static DBConfig config;
 	@Autowired
-	private static JobDAO jobDAO;
+	private static UserDAO userDAO;
 
 	@BeforeClass
 	public static void setUp() {
 		config = new DBConfig();
-		//blogDAO = new BlogDAOImpl(config.getSessionFactory(config.getDataSource()));
+		
 		@SuppressWarnings("resource")
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit");
 		context.refresh();
 		
-		jobDAO =(JobDAO) context.getBean("jobDAO");
+	userDAO =(UserDAO) context.getBean("userDAO");
 	}
+	
+	
 	@Test
-	public void testUpdateJob() {
-		
-		Job job = new Job();
-		 job=(Job)jobDAO.getJob(62);
-		 job.setSalary(60000);
-		 assertEquals("sucessfully updated from table" ,true,jobDAO.updateJob(job));
-			
+	public void testUpdateUser() 
+	{
+		User user = new User();
+		user=(User)userDAO.getUser("Pranali");
+		 user.setEmail("pranali@yahoo.com");
+		 assertEquals("sucessfully updated into table" ,true,userDAO.updateUser(user));
 	}
-
 }

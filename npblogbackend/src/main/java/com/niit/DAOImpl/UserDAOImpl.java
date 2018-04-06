@@ -10,16 +10,21 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.DAO.UserDAO;
-import com.niit.Model.Blog;
 import com.niit.Model.User;
+
+
+
+
 @Repository("UserDAO")
 public class UserDAOImpl implements UserDAO {
+	
 	@Autowired
     SessionFactory sessionFactory;
 	
 	public UserDAOImpl() {
 		// TODO Auto-generated constructor stub
 	}
+	
 	@Transactional
 	public boolean addUser(User user) {
 		try
@@ -29,10 +34,11 @@ public class UserDAOImpl implements UserDAO {
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			return false;
 		}
 	}
-
+	@Transactional
 	public boolean deleteUser(User user) {
 		try
 		{
@@ -44,7 +50,7 @@ public class UserDAOImpl implements UserDAO {
 			return false;
 		}
 	}
-
+	@Transactional
 	public boolean updateUser(User user) {
 		try
 		{
@@ -57,11 +63,11 @@ public class UserDAOImpl implements UserDAO {
 		}
 	}
 
-	public User getUser(int userId) {
+	public User getUser(String loginName) {
 		try
 		{
 			Session session=sessionFactory.openSession();
-			User user=session.get(User.class,userId);
+			User user=session.get(User.class,loginName);
 			session.close();
 			return user;
 		}
@@ -75,9 +81,43 @@ public class UserDAOImpl implements UserDAO {
 		Session session=sessionFactory.openSession();
 		Query query=session.createQuery("from User where email=:email");
 		query.setParameter("email",email);
-		query.list();
-		List<User> user=query.list();
-		return user;
+		List<User> listUsers=query.list();
+		return listUsers;
+	}
+
+	public boolean checkLogin(User user) {
+		try
+		{
+			Session session=sessionFactory.openSession();
+			Query query=session.createQuery("from User where loginName=:loginName and pass=:pass");
+			query.setParameter("loginName",user.getLoginName());
+			query.setParameter("pass", user.getPass());
+			User users=(User)query.list().get(0);
+			if(users==null)
+				return false;
+			else
+				return true;
+			
+	  }
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
+	@Transactional
+	public boolean updateOnlineStatus(String status, User user) {
+		try
+		{
+			user.setIsOnline(status);
+			sessionFactory.getCurrentSession().update(user);
+			return true;
+		
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			return false;
+		}
 	}
 	
 	
