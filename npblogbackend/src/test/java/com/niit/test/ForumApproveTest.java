@@ -31,7 +31,7 @@ public class ForumApproveTest {
 	public void testApproveForum() 
 	{
 		Forum forum= new Forum();
-		 forum=(Forum)forumDAO.getForum(61);
+		 forum=(Forum)forumDAO.getForum(90);
 		 forum.setStatus("A");
 		 assertEquals("sucessfully updated status from table" ,true,forumDAO.approveForum(forum));
 		

@@ -36,8 +36,8 @@ public class UserUpdateTest {
 	public void testUpdateUser() 
 	{
 		User user = new User();
-		user=(User)userDAO.getUser("Pranali");
-		 user.setEmail("pranali@yahoo.com");
+		user=(User)userDAO.getUser("nayan");
+		 user.setEmail("nayan123@gmail.com");
 		 assertEquals("sucessfully updated into table" ,true,userDAO.updateUser(user));
 	}
 }

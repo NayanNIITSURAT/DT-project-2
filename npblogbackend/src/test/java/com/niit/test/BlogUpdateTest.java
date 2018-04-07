@@ -36,8 +36,8 @@ public class BlogUpdateTest {
 		
 		Blog blog = new Blog();
 		
-		 blog=(Blog)blogDAO.getBlog(55);
-		 blog.setUsername("Akshay");
+		 blog=(Blog)blogDAO.getBlog(68);
+		 blog.setUsername("np");
 		 assertEquals("sucessfully updated from table" ,true,blogDAO.updateBlog(blog));
 		
 	}

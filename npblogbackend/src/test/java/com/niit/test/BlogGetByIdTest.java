@@ -31,7 +31,7 @@ public class BlogGetByIdTest {
 			
 			Blog blog = new Blog();
 			
-			 blog=(Blog)blogDAO.getBlog(52);
+			 blog=(Blog)blogDAO.getBlog(68);
 			 System.out.println("ID: "+blog.getBlogId()+ ",UserName: " +blog.getUsername());
 		}
 

@@ -27,7 +27,7 @@ public class ForumGetByIdTest {
 	public void testGetByIdForum() {
 		
 		Forum forum= new Forum();
-		forum=(Forum)forumDAO.getForum(61);
+		forum=(Forum)forumDAO.getForum(90);
 		 System.out.println("ID: "+forum.getForumId()+ ",UserName: " +forum.getUsername());
 	}
 

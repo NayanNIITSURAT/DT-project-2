@@ -29,7 +29,7 @@ public class JobGetByIdTest {
 	@Test
 	public void testUpdateJob() {
 		Job job = new Job();
-		 job=(Job)jobDAO.getJob(62);
+		 job=(Job)jobDAO.getJob(67);
 		 
 		 System.out.println("ID: "+job.getJobId()+ ",Company: " +job.getCompany());
 		

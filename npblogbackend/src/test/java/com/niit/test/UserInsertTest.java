@@ -43,16 +43,16 @@ public class UserInsertTest {
 		
 			
 		User user = new User();
-		user.setUserName(" Prama  Singh");
-		user.setLoginName("Param");
-		user.setAddress("54,Dharampeth");
-		user.setAge(32);
+		user.setUserName("raj");
+		user.setLoginName("raj");
+		user.setAddress("54,surat");
+		user.setAge(23);
 		user.setContactNo("7895641236");
 		user.setDob(new java.util.Date());
-		user.setEmail("param@gmail.com");
+		user.setEmail("raj@gmail.com");
 		user.setGender("Male");
 		user.setIsOnline("N");
-		user.setPass("pass12345");
+		user.setPass("12345");
 		user.setRole("ROLEADMIN");
 		
 		//System.out.println(userDAO.addUser(user));

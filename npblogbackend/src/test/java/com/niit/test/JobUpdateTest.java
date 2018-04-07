@@ -31,7 +31,7 @@ public class JobUpdateTest {
 	public void testUpdateJob() {
 		
 		Job job = new Job();
-		 job=(Job)jobDAO.getJob(62);
+		 job=(Job)jobDAO.getJob(67);
 		 job.setSalary(60000);
 		 assertEquals("sucessfully updated from table" ,true,jobDAO.updateJob(job));
 			

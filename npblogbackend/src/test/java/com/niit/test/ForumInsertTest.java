@@ -39,9 +39,9 @@ public class ForumInsertTest {
 		Forum forum = new Forum();
 
 		forum.setForumName("forum11");
-		forum.setForumContent("this is np from11");
+		forum.setForumContent("this is np");
 	    forum.setCreateDate(dobj);
-	    forum.setUsername("form11");
+	    forum.setUsername("npp");
 	    forum.setStatus("NA");
 		forumDAO.addForum(forum);
 		System.out.println("Done  from inserted");
