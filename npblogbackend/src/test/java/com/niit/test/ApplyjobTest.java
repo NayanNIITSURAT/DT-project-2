@@ -2,8 +2,7 @@ package com.niit.test;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.text.ParseException;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -12,10 +11,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.niit.Config.DBConfig;
 import com.niit.DAO.JobDAO;
-import com.niit.Model.Blog;
-import com.niit.Model.Job;
+import com.niit.Model.ApplyJob;
 
-public class JobListByIdTest {
+
+public class ApplyjobTest {
+	
 	private static DBConfig config;
 	@Autowired
 	private static JobDAO jobDAO;
@@ -31,22 +31,19 @@ public class JobListByIdTest {
 		
 		jobDAO =(JobDAO) context.getBean("jobDAO");
 	}
-	@Test
-	public void testUpdateJob() {
-		Job job = new Job();
+@Test
+	public void testApplyJob() {
+		ApplyJob app = new ApplyJob();
 
-		List<Job> listJobs=jobDAO.listJob();
-		assertTrue("List of job data display",listJobs.size()>0);
+		System.out.println("enter in applyjob test");
+		app.setApplyDate(new java.util.Date());
+		System.out.println("enter in applyjob test date");
+		app.setJobId(67);
+		System.out.println("enter in applyjob test id");
+		app.setLoginname("nayan");
+		System.out.println("enter in applyjob test name");
 		
-		for(Job jobs:listJobs)
-		{
-			System.out.println(jobs.getCompany()+"::");
-			System.out.println(jobs.getJobDesc()+"::");
-			System.out.println(jobs.getJobDesignation()+"::");
-			System.out.println(jobs.getLocation()+"::");
-			System.out.println(jobs.getSalary()+"::");
-			
-		}
-
+	System.out.println(jobDAO.applyJob(app));
+	System.out.println("enter in applyjob test end");
 }
 }

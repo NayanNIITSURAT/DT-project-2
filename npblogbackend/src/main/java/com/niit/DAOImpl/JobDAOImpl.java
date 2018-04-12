@@ -76,14 +76,13 @@ public class JobDAOImpl implements JobDAO {
 		}
 	}
 
-	public List<Job> listJob(int jobId) {
+	public List<Job> listJob() {
 		
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Job where jobId=:jobId");
-		query.setParameter("jobId",jobId);
-	
-		List<Job> listJobs=query.list();
-		return listJobs;
+		Query query=session.createQuery(" from Job");
+	query.list();
+List<Job> listjobs=query.list();
+return listjobs;
 	}
 	@Transactional
 	public boolean applyJob(ApplyJob app) {

@@ -2,7 +2,6 @@ package com.niit.test;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -11,14 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.Config.DBConfig;
-import com.niit.DAO.JobDAO;
+import com.niit.DAO.BlogDAO;
 import com.niit.Model.Blog;
-import com.niit.Model.Job;
+import com.niit.Model.BlogComment;
 
-public class JobListByIdTest {
+public class BlogCommentListByIdTest {
 	private static DBConfig config;
 	@Autowired
-	private static JobDAO jobDAO;
+	private static BlogDAO blogDAO;
 
 	@BeforeClass
 	public static void setUp() {
@@ -29,24 +28,24 @@ public class JobListByIdTest {
 		context.scan("com.niit");
 		context.refresh();
 		
-		jobDAO =(JobDAO) context.getBean("jobDAO");
+		blogDAO =(BlogDAO) context.getBean("blogDAO");
 	}
+	
 	@Test
-	public void testUpdateJob() {
-		Job job = new Job();
-
-		List<Job> listJobs=jobDAO.listJob();
-		assertTrue("List of job data display",listJobs.size()>0);
-		
-		for(Job jobs:listJobs)
+	public void testGetBlogCommentListById() 
+	{
+		BlogComment blogComment	 = new BlogComment();
+		List<BlogComment> listBlogcomment=blogDAO.listBlogComment(25);
+		assertTrue("List of blogComment data display",listBlogcomment.size()>0);
+		for(BlogComment blogComments:listBlogcomment)
 		{
-			System.out.println(jobs.getCompany()+"::");
-			System.out.println(jobs.getJobDesc()+"::");
-			System.out.println(jobs.getJobDesignation()+"::");
-			System.out.println(jobs.getLocation()+"::");
-			System.out.println(jobs.getSalary()+"::");
+			System.out.println(blogComments.getCommentId()+"::");
+			System.out.println(blogComments.getCommentText()+"::");
+			System.out.println(blogComments.getUsername()+"::");
+		
 			
 		}
+		
+	}
 
-}
 }

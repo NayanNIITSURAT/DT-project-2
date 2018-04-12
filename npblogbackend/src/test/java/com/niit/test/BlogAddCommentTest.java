@@ -2,23 +2,21 @@ package com.niit.test;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.Config.DBConfig;
-import com.niit.DAO.JobDAO;
+import com.niit.DAO.BlogDAO;
 import com.niit.Model.Blog;
-import com.niit.Model.Job;
+import com.niit.Model.BlogComment;
 
-public class JobListByIdTest {
+public class BlogAddCommentTest {
+
 	private static DBConfig config;
 	@Autowired
-	private static JobDAO jobDAO;
+	private static BlogDAO blogDAO;
 
 	@BeforeClass
 	public static void setUp() {
@@ -29,24 +27,21 @@ public class JobListByIdTest {
 		context.scan("com.niit");
 		context.refresh();
 		
-		jobDAO =(JobDAO) context.getBean("jobDAO");
+		blogDAO =(BlogDAO) context.getBean("blogDAO");
 	}
+
 	@Test
-	public void testUpdateJob() {
-		Job job = new Job();
-
-		List<Job> listJobs=jobDAO.listJob();
-		assertTrue("List of job data display",listJobs.size()>0);
+	public void testAddBlogComment() {
 		
-		for(Job jobs:listJobs)
-		{
-			System.out.println(jobs.getCompany()+"::");
-			System.out.println(jobs.getJobDesc()+"::");
-			System.out.println(jobs.getJobDesignation()+"::");
-			System.out.println(jobs.getLocation()+"::");
-			System.out.println(jobs.getSalary()+"::");
-			
-		}
+		
+	BlogComment blogComment	 = new BlogComment();
 
-}
+		blogComment.setCommentDate(new java.util.Date());
+	    blogComment.setBlogId(25);
+	    blogComment.setCommentText("yes right");
+	    blogComment.setUsername("nayan");
+	    
+	assertTrue("Data inserted in blogComment table",blogDAO.addBlogComment(blogComment));
+		
+	}
 }
