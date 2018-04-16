@@ -102,7 +102,4 @@ public class User {
 		this.dob = dob;
 	}
 	
-	
-	
-
 }

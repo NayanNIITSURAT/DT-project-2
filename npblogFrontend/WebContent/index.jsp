@@ -1,96 +1,141 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <title>NIIT SURAT</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-  <script src="js/myrouteconfig.js"></script>
-  <script src="c_blog/BlogController.js"></script>
-  
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height:auto;}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
-  </style>
-</head> 
-<body ng-app="myApp" >
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">NIIT SURAT BLOG</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-  <li class="active"><a href="#!home">home</a></li>
-       <li><a href="#!login">login</a></li>
-        <li><a href="#!register">registration</a></li>
-				<li><a href="#!blog">Blog</a></li>
-				<li><a href="#!Aboutus">About Us</a></li>
-				<li><a href="#!contactus">Contact Us</a></li>
-        
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
- <!--  
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-    <p>   <a href="#home">home</a></p>
-  <p><a href="#login">login</a></p>
-  <p><a href="#register">registration</a></p>
-    </div>--> 
-    this is index 
-   <div ng-view>
-   
-   
-    </div>
-  
- 
-<footer class="container-fluid text-center">
-  <p>CopyRight By NIIT surat</p>
-</footer>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>index.jsp</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script 
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
+	
+<script 
+     src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.3/lodash.js"></script>
+<script 
+     src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+<script 
+     src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.js"></script>
+	
+<script src="js/MyRouteConfig.js"></script>
+<script src="c_blog/BlogController.js"></script>
+<script src="c_forum/ForumController.js"></script>
+<script src="c_job/JobController.js"></script>
+<script src="c_user/UserController.js"></script>
+<script src="c_chat/ChatController.js"></script>
+<script src="c_chat/ChatService.js"></script>
+<script src="c_friend/FriendController.js"></script>
+
+
+<style>
+.navbar-brand {
+	padding: 0px;
+}
+
+.navbar-brand>img {
+	height: 160%;
+	padding-bottom: 20px;
+	width: auto;
+}
+
+.example3 .navbar-brand {
+	height: 80px;
+}
+
+.example3 .nav>li>a {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.example3 .navbar-toggle {
+	padding: 10px;
+	margin: 25px 15px 25px 0;
+}
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+span {
+	color: "#3399FF";
+	font-size: 20px;
+	font-style: italic;
+}
+</style>
+</head>
+<body ng-app="myApp">
+	<div class="example3">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar3">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href=" "><img src="images/npcoin.gif"
+					alt="FrenzzCollab logo"></a>
+				<!-- <ul class="nav navbar-nav navbar-left">
+       <li> <a class= "navbar-brand"><span style="color:#4C9900">FrenzzCollab</span></a></li></ul> -->
+			</div>
+			<ul class="nav navbar-nav navbar-left">
+				<li class="active"><a href="#!Home">Home</a></li>
+				<li ng-hide="currentUser.role=='ROLEUSER'|| currentUser.role=='ROLEADMIN'"><a href="#!AboutUs">About Us</a></li>
+				<li ng-hide="currentUser.role=='ROLEUSER'|| currentUser.role=='ROLEADMIN'"><a href="#!ContactUs">Contact Us</a></li>
+			</ul>
+			
+			     <ul class="nav navbar-nav navbar-right">
+			      	<li ng-hide="currentUser.role=='ROLEUSER'|| currentUser.role=='ROLEADMIN'"><a href="#!Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+			      <li ng-hide="currentUser.role=='ROLEUSER'|| currentUser.role=='ROLEADMIN'"><a href="#!login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  
+         </ul>
+			     
+				<div class="nav navbar-nav navbar-left" ng-hide="currentUser==undefined">
+				<ul class="nav navbar-nav">
+				
+				
+				
+				<li ng-show="currentUser.role=='ROLEUSER'"><a href="#!blog">Blog</a></li>
+				<li ng-show="currentUser.role=='ROLEUSER'"><a href="#!uploadProfilepic">Update Profile</a></li>
+				<li ng-show="currentUser.role=='ROLEUSER'"><a href="#!displayBlog">BlogList</a></li>
+		          <li ng-show="currentUser.role=='ROLEUSER'"><a href="#!forum">Forum</a></li>
+		           <li ng-show="currentUser.role=='ROLEUSER'"><a href="#!displayForum">ForumList</a></li>
+		           <li ng-show="currentUser.role=='ROLEADMIN'"><a href="#!job">Job</a></li>
+		           <li ng-show="currentUser.role=='ROLEADMIN'"><a href="#!displayJob">JobList</a></li>
+		            <li ng-show="currentUser.role=='ROLEUSER'"><a href="#!searchJob">Job Search</a></li>
+		             <li ng-show="currentUser.role=='ROLEUSER'"><a href="#!chat">Chat</a></li>
+		                 <li ng-show="currentUser.role=='ROLEUSER'"><a href="#!friend">Friend</a></li>
+		            </ul>
+		            </div>
+		            
+		           <div class="nav navbar-nav navbar-right" ng-hide="currentUser==undefined">
+				<ul class="nav navbar-nav">
+				 <font color="white">Welcome {{currentUser.loginName}}</font>
+				 		<img id="img1" class="avatar" src="http://localhost:8098/npblogmidware/getImage/{{currentUser.loginName}}" width="20 height=20"></img>
+		<form ng-controller="UserController"><input type="submit" value="logout" ng-click="logout()" class="btn btn-info"/></form>
+		</ul>
+		</div>
+		
+				
+		
+		</div>
+		</nav>
+	</div>
+	
+	<div ng-view> </div>
+	<jsp:include page="footer.jsp" />
+
 
 </body>
 </html>

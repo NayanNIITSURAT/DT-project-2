@@ -3,11 +3,10 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <dependent-module archiveName="npblogbackend-1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/npblogbackend/npblogbackend">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <property name="java-output-path" value="/npblogmidware/target/classes"/>
         <property name="context-root" value="npblogmidware"/>
+        <property name="java-output-path" value="/npblogmidware/target/classes"/>
     </wb-module>
 </project-modules>
