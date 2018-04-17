@@ -1,36 +1,30 @@
 <!DOCTYPE HTML>
 <html>
 <head>
- <title>Bootstrap Example</title>
+
+ <title>Registration page </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
 <style type="text/css">
   
 body{
- 
-   height: 100%;
-    background-repeat:repeat;
-    background-image:url('http://cleancanvas.herokuapp.com/img/backgrounds/water.jpg');
 
-}
-
-
+background-color:red;
 </style>
 
 </head>
 
-<body>
+<body >
 
 <div class="container" style="margin-top: 5%;" ng-controller="UserController">
 <h1 class="text-center text-success"> Register page</h1>
 <div class="tab-content">
     
-<form action="#">
+<form action="#" name="myForm">
 	<div class="row">
 	<div class="col-xs-6 col-sm-6 col-md-6">
  <div class="form-group">
@@ -101,7 +95,7 @@ body{
 
 <div class="col-xs-6 col-sm-6 col-md-6">
 <div class="form-group">
-<p style="padding-left:200px"> <button type="submit" class="btn btn-success" ng-click="Register()">Submit</button>
+<p style="padding-left:200px"> <button type="submit"  name="np" class="btn btn-success" ng-click="Register()">Submit</button>
   &nbsp; &nbsp;  &nbsp;  &nbsp;<button type="submit" class="btn btn-danger">Already Register</button></p>
 
 </div>
@@ -109,14 +103,6 @@ body{
 </form>
     </div>
     </div>
-
-    
-
-
-    
-
-
-
 
 
 </body>
