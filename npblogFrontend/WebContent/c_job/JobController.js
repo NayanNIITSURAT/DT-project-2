@@ -8,7 +8,7 @@ myApp.controller("JobController",function($scope,$http,$location)
 	$scope.insertJob=function()
 	{
 		console.log("Enter into insertjob Method");
-		$http.post('http://localhost:8098/npblogmidware//addJob',$scope.job)
+		$http.post('http://localhost:8098/npblogmidware/addJob',$scope.job)
 		.then(fetchAllJob(),function(response)
      	{
 			console.log('Status Text:'+response.statusText);
@@ -18,11 +18,19 @@ myApp.controller("JobController",function($scope,$http,$location)
 	};
 	
 	
+	$scope.serch=function()
+	{
+		console.log('we are in the serch job');
+		  $location.path("/applyJob");
+		
+	}
+	
+	
 	
 	$scope.deleteJob=function(jobId)
 	{
 		console.log('Enter into the delete job method');
-		$http.delete('http://localhost:8098/npblogmidware//deletejob/'+jobId)
+		$http.delete('http://localhost:8098/npblogmidware/deletejob/'+jobId)
 		.then(fetchAllJob(),function(response)
 				{
 			        console.log('Deleted');

@@ -39,6 +39,9 @@ myApp.config(function($routeProvider) {
 	.when("/searchJob",{
 		templateUrl : "c_job/JobSearch_page.html"
 	})
+	.when("/applyJob",{
+		templateUrl : "c_job/applyjob.html"
+	})
 	.when("/AboutUs", {
 		templateUrl : "template/AboutUs.html"
 	})
